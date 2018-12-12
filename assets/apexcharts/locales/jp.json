@@ -1,0 +1,20 @@
+{
+  "name": "jp",
+  "options": {
+    "months": ["1Œ", "‚QŒ", "‚RŒ", "‚SŒ", "‚TŒ", "‚UŒ", "‚VŒ", "‚WŒ", "‚XŒ", "‚P‚OŒ", "‚P‚PŒ", "‚P‚QŒ"],
+    "shortMonths": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    "days": ["“ú—j", "Œ—j", "‰Î—j", "…—j", "–Ø—j", "‹à—j", "“y—j"],
+    "shortDays": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+    "toolbar": {
+      "exportToSVG": "Download SVG",
+      "exportToPNG": "Download PNG",
+      "menu": "ƒƒjƒ…[",
+      "selection": "Selection",
+      "selectionZoom": "Selection Zoom",
+      "zoomIn": "Zoom In",
+      "zoomOut": "Zoom Out",
+      "pan": "Panning",
+      "reset": "Reset Zoom"
+    }
+  }
+}

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Range HeatMap</title>
+
+
+  <link href="./css/styles.css" rel="stylesheet" />
+
+  <style>
+    #chart {
+            max-width: 100%;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body>
+  <div id="chart">
+    <apexchart type=heatmap height=350 :options="chartOptions" :series="series" />
+  </div>
+
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-apexcharts"></script>
+
+  <script>
+    
+    function generateData(count, yrange) {
+      var i = 0;
+      var series = [];
+      while (i < count) {
+        var x = (i + 1).toString();
+        var y = Math.floor(2 * (yrange.max - yrange.min + 1)) + yrange.min;
+
+        series.push({
+          x: x,
+          y: y
+        });
+        i++;
+      }
+      return series;
+    }
+    
+    new Vue({
+      el: '#chart',
+      components: {
+        apexchart: VueApexCharts,
+      },
+      data: {
+        series: [{
+            name: '5',
+            data: [{"x":"45","y":0,"z":"A"},{"x":"47","y":40},{"x":"49","y":41},{"x":"51","y":44},{"x":"53","y":44},{"x":"55","y":44},{"x":"57","y":51},{"x":"59","y":51},{"x":"61","y":59},{"x":"63","y":59},{"x":"65","y":59},{"x":"67","y":75},{"x":"69","y":75},{"x":"71","y":0},{"x":"73","y":75},{"x":"75","y":0}]
+          },
+          {
+            name: '10',
+            data: [{"x":"45","y":0,"z":"A"},{"x":"47","y":0},{"x":"49","y":0},{"x":"51","y":0},{"x":"53","y":0},{"x":"55","y":0},{"x":"57","y":0},{"x":"59","y":51},{"x":"61","y":59},{"x":"63","y":59},{"x":"65","y":0},{"x":"67","y":75},{"x":"69","y":0},{"x":"71","y":0},{"x":"73","y":0},{"x":"75","y":0}]
+          },
+          {
+            name: '15',
+            data: [{"x":"45","y":0,"z":"A"},{"x":"47","y":0},{"x":"49","y":0},{"x":"51","y":0},{"x":"53","y":0},{"x":"55","y":0},{"x":"57","y":0},{"x":"59","y":0},{"x":"61","y":0},{"x":"63","y":59},{"x":"65","y":0},{"x":"67","y":0},{"x":"69","y":0},{"x":"71","y":0},{"x":"73","y":0},{"x":"75","y":0}]
+          },
+          {
+            name: '20',
+            data: [{"x":"45","y":0,"z":"A"},{"x":"47","y":0},{"x":"49","y":0},{"x":"51","y":0},{"x":"53","y":0},{"x":"55","y":0},{"x":"57","y":0},{"x":"59","y":0},{"x":"61","y":0},{"x":"63","y":0},{"x":"65","y":0},{"x":"67","y":0},{"x":"69","y":0},{"x":"71","y":0},{"x":"73","y":0},{"x":"75","y":0}]
+          },
+          {
+            name: '25',
+            data: [{"x":"45","y":0,"z":"A"},{"x":"47","y":0},{"x":"49","y":0},{"x":"51","y":0},{"x":"53","y":0},{"x":"55","y":0},{"x":"57","y":0},{"x":"59","y":0},{"x":"61","y":0},{"x":"63","y":0},{"x":"65","y":0},{"x":"67","y":0},{"x":"69","y":0},{"x":"71","y":0},{"x":"73","y":0},{"x":"75","y":0}]
+          },
+          {
+            name: '30',
+            data: [{"x":"45","y":0,"z":"A"},{"x":"47","y":0},{"x":"49","y":0},{"x":"51","y":0},{"x":"53","y":0},{"x":"55","y":0},{"x":"57","y":0},{"x":"59","y":0},{"x":"61","y":0},{"x":"63","y":0},{"x":"65","y":0},{"x":"67","y":0},{"x":"69","y":0},{"x":"71","y":0},{"x":"73","y":0},{"x":"75","y":0}]
+          },
+          {
+            name: '35',
+            data: [{"x":"45","y":0,"z":"A"},{"x":"47","y":0},{"x":"49","y":0},{"x":"51","y":0},{"x":"53","y":0},{"x":"55","y":0},{"x":"57","y":0},{"x":"59","y":0},{"x":"61","y":0},{"x":"63","y":0},{"x":"65","y":0},{"x":"67","y":0},{"x":"69","y":0},{"x":"71","y":0},{"x":"73","y":0},{"x":"75","y":0}]
+          },
+          {
+            name: '40',
+            data: [{"x":"45","y":0,"z":"A"},{"x":"47","y":0},{"x":"49","y":0},{"x":"51","y":0},{"x":"53","y":0},{"x":"55","y":0},{"x":"57","y":0},{"x":"59","y":0},{"x":"61","y":0},{"x":"63","y":0},{"x":"65","y":0},{"x":"67","y":0},{"x":"69","y":0},{"x":"71","y":0},{"x":"73","y":0},{"x":"75","y":0}]
+          },
+          {
+            name: '45',
+            data: [{"x":"45","y":0,"z":"A"},{"x":"47","y":0},{"x":"49","y":0},{"x":"51","y":0},{"x":"53","y":0},{"x":"55","y":0},{"x":"57","y":0},{"x":"59","y":0},{"x":"61","y":0},{"x":"63","y":0},{"x":"65","y":0},{"x":"67","y":0},{"x":"69","y":0},{"x":"71","y":0},{"x":"73","y":0},{"x":"75","y":0}]
+          },
+          {
+            name: '50',
+            data: [{"x":"45","y":0,"z":"A"},{"x":"47","y":0},{"x":"49","y":0},{"x":"51","y":0},{"x":"53","y":0},{"x":"55","y":0},{"x":"57","y":0},{"x":"59","y":0},{"x":"61","y":0},{"x":"63","y":0},{"x":"65","y":0},{"x":"67","y":0},{"x":"69","y":0},{"x":"71","y":0},{"x":"73","y":0},{"x":"75","y":0}]
+          },
+        ],
+        chartOptions: {
+          stroke: {
+            show: true,
+            width: 2
+          },
+          fill: {
+            colors: undefined,
+            opacity: 1,
+          },
+          grid:{
+            show: true,
+            position: 'front',
+            xaxis: {
+                lines: {
+                    show: true,
+                    offsetX: 0,
+                    offsetY: 0
+                }
+            },   
+            yaxis: {
+                lines: {
+                    show: true,
+                    offsetX: 0,
+                    offsetY: 0
+                }
+            },   
+          },
+          plotOptions: {
+            heatmap: {
+              shadeIntensity: 0.0,
+              inverse: true,
+              enableShades: false,
+              colorScale: {
+                ranges: [{
+                    from: 60,
+                    to: 99,
+                    name: 'A',
+                    color: '#FF0000'
+                  },
+                  {
+                    from: 55,
+                    to: 59,
+                    name: 'B',
+                    color: '#FFB200'
+                  },
+                  {
+                    from: 50,
+                    to: 54,
+                    name: 'C',
+                    color: '#00A100'
+                  },
+                  {
+                    from: 45,
+                    to: 49,
+                    name: 'D',
+                    color: '#128FD9'
+                  },
+                  {
+                    from: 38,
+                    to: 44,
+                    name: 'E',
+                    color: '#b071bf'
+                  },
+                  {
+                    from: 0,
+                    to: 0,
+                    name: ' ',
+                    color: '#FFF'
+                  },
+                ]
+              }
+            }
+          },
+          dataLabels: {
+            enabled: false
+          },
+          tooltip: {
+            x:{show: true},
+            marker:{show: true},
+            custom: function({series, seriesIndex, dataPointIndex, w}) {
+              var data_ = series[seriesIndex][dataPointIndex];
+              if (data_){
+                return '<div class="arrow_box" style="padding:5px">' +
+                  '<span>' + data_ + '</span>' +
+                  '</div>'
+              }else{
+                return '';
+              }
+            },
+            z: {
+                formatter: function(){return "A"},
+                title: 'Size: '
+            },
+
+          },
+          title: {
+            text: '度数分布',
+          }
+        }
+      },
+
+    })
+  </script>
+
+</body>
+
+</html>
